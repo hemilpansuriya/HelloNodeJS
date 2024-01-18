@@ -28,7 +28,9 @@ jobs:
 
       - name: Login to Docker Hub
         run: |
-          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "hemilkumarpansuriya" --password-stdin
+          echo "DOCKERHUB_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}" >> $GITHUB_ENV
+          echo "DOCKERHUB_USERNAME=hemilkumarpansuriya" >> $GITHUB_ENV
+          docker login -u $DOCKERHUB_USERNAME --password-stdin <<< $DOCKERHUB_TOKEN
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
