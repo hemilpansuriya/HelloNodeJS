@@ -23,15 +23,14 @@ jobs:
           debug: true
 
       - name: Build Docker Image
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         
 
       - name: Login to Docker Hub
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
-          run: docker login -u hemilkumarpansuriya
-          username: ${{ secrets.hemilkumarpansuriya }}
-          password: ${{ secrets.dckr_pat_Lw9i9AmnnCugBEuwcbKDM6ZJJts }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.ACCESSTOKEN }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
