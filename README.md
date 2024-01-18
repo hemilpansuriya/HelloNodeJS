@@ -11,5 +11,5 @@ Great for testing simple deployments to the cloud
 ## Build docker image
 docker build -t helloapp .
 
-##run docker file
+## Run docker file
 docker run -p 8000:8000 helloapp
