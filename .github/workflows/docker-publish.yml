@@ -23,7 +23,6 @@ jobs:
           debug: true
 
       - name: Build Docker Image
-        uses: actions/checkout@v3
         run: docker build -t hemilkumarpansuriya/helloapp:latest .
 
       - name: Login to Docker Hub
